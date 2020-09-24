@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>LoginPage</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>  
+  <ion-card>
+    <form (ngSubmit)="loginForm()">
+      <ion-item lines="full">
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="text" [(ngModel)]="UserData.email" name="email" required></ion-input>
+      </ion-item>
+  
+      <ion-item lines="full">
+        <ion-icon name="key-outline" slot="start"></ion-icon>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="UserData.password" name="password" required></ion-input>
+      </ion-item>
+      <ion-card-content>
+        <ion-row>
+          <ion-col>
+            <ion-button type="submit" color="primary" expand="block">Sign In</ion-button>
+            <a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button color="danger" expand="block" (click)="RegisterPage()">Register</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </form>
+  </ion-card>
+</ion-content>

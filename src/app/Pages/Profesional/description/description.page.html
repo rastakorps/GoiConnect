@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <img src="..\..\..\..\..\assets\goiconnect.png" slot="start" width="160px" height="80px" style="border-top-right-radius: 30px; border-bottom-right-radius:30px">
+    <ion-searchbar></ion-searchbar>
+    <ion-buttons slot="end" class="btnmen" color="light">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let item of feed" style="height: auto">
+    <ion-text color="dark">
+      <ion-card-title>
+        <h3 style="margin-left: 5px">{{ item.title }}
+          <ion-icon color="primary" name="checkmark-circle"></ion-icon>
+        </h3>
+      </ion-card-title>
+      <ion-card-subtitle>
+        <h5 style="margin-left: 5px">Campaña social</h5>
+      </ion-card-subtitle>
+    </ion-text>
+    <ion-card-content>
+      <div *ngIf="item.src" class="vid">
+        <video #player playsinline controls preload="auto">
+          <source [src]="item.src" type="video/mp4"/>
+        </video>
+      </div>
+        <br><br>
+        <div style="background-color: #e3e3db; width: 110%; height: 65px; padding-top:7px; margin-left: -18px;">
+          <ion-progress-bar value="0.7" style="width: 60%; height: 20px; border-radius: 35px; --progress-background: #8dc63f; --background: #555555; margin-left: 10px; margin-top: 8px;"></ion-progress-bar>
+          <ion-text color="dark">
+            <h1 style="margin-left: 10px;">$3,100.00</h1>
+          </ion-text>
+        </div>
+        <br>
+        <div style="text-align: center;">
+          <ion-button style="text-align: center;" shape="round">
+            <ion-text>
+              Aportar ahora
+            </ion-text>
+          </ion-button>
+        </div>
+        <br>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <br>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

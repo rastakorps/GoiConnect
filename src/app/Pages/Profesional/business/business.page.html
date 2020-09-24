@@ -1,0 +1,77 @@
+
+
+<ion-content [scrollEvents]= "true" (ionScroll)="didScroll($event)">
+  <br>
+<ion-toolbar>
+
+    <ion-button ion-button slot="end" shape="round" color="dark" routerLink="/createcamp">
+      <ion-icon name="add"></ion-icon>
+    </ion-button>
+
+  <div style="background-color: black; float: left; width: 170px; height: 35px; border-bottom-right-radius: 35px; border-top-right-radius: 35px; text-align:center; padding-top: 8px;">
+    <ion-text color="light" style="font-size: 18px;">Crowdfunding</ion-text>
+  </div>
+</ion-toolbar>
+  <ion-list>
+    <ion-card *ngFor="let item of feed" color="primary" style="margin-left: -10px; width:105%" routerLink="/description">
+
+      <ion-card-content>
+        <div>
+          <div style="float: left;">
+            <h2><b> {{ item.title }}</b></h2>
+          </div>
+          <div style="float: right; margin-top: -7px">
+              <p>user: {{ item.user }}</p>
+              <p> 20/10/2020</p>
+          </div>
+        </div>
+        <br><br>
+        <div>
+          <div *ngIf="item.src">
+            <video #player playsinline controls preload="auto">
+              <source [src]="item.src" type="video/mp4"/>
+            </video>
+            <div style="float: right; margin-right: 10px; width:50%;">
+              <ion-text style="text-align:justify;">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </ion-text>
+              <br>
+              <p>Meta: $35000.00</p>
+              <ion-progress-bar value="0.7" style="width: 96%; height: 25px; border-radius: 35px; --progress-background: #8dc63f; --background: #555555; margin-bottom: 30px;"></ion-progress-bar>
+            </div>
+          </div>
+          
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <br><br>
+  </ion-list>
+  <div class="sticky-video" #stickyplayer [hidden]="!stickyVideo">
+    <div class="sticky-controls" *ngIf="stickyVideo">
+      <ion-row class="ion-no-padding">
+        <ion-col size="4">
+          <ion-button size="small" (click)="closeSticky()" color="light" fill="clear">
+            <ion-icon slot="icon-only" name="close-circle-outline"></ion-icon>
+          </ion-button>
+        </ion-col>
+
+        <ion-col size="4">
+          <ion-button size="small" (click)="playOrPauseSticky()" color="light" fill="clear">
+            <ion-icon slot="icon-only" [name]="stickyPlaying ? 'pause' : 'play'"></ion-icon>
+          </ion-button>
+        </ion-col>
+
+        <ion-col size="4">
+          <ion-button size="small" (click)="openFullscreen(stickyVideo)" color="light" fill="clear">
+            <ion-icon slot="icon-only" name="easel"></ion-icon>
+          </ion-button>
+        </ion-col>
+
+      </ion-row>
+
+    </div>
+
+  </div>
+</ion-content>

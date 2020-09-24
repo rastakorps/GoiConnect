@@ -1,0 +1,25 @@
+ion-slides{
+    height: 75px;
+}
+
+ion-avatar{
+    border:2px solid #044e7f;
+    margin-left: 9px;
+}
+
+.btnup {
+    --background: var(--ion-color-medium-tint);
+}
+
+.btnvi {
+    --background: var(--ion-color-medium-tint);
+}
+
+.btnpost {
+    width: 130px;
+    float: right;
+}
+.inppost{
+    color: var(--ion-color-secondary-tint);
+    font-size: 1.2em;
+}

@@ -24,3 +24,15 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.cart-modal{
+    --height: 50%;
+    --border-radius: 10px;
+}
+ion-searchbar{
+    .searchbar-input-container{
+        .searchbar-input{
+            border-radius: 35px !important;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.openroom {
+    border-radius: 35px;
+}
+.navsala {
+    text-align: center;
+}
+.message {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 4px;
+    white-space: pre-wrap;
+}
+ion-avatar{
+    margin-left: 9px;
+}
+.other-message {
+    background-color: #e8e8e8;
+    color: black;
+}
+
+.my-message {
+    background-color: #bcbcbc;
+    color: black;
+}
+
+.time {
+    color: #dfdfdf;
+    float: right;
+    font-size: small;
+}
+
+.message-input{
+    width: 100%;
+    border: 1px solid var(--ion-color-medium);
+    border-radius: 30px;
+    background: #fff;
+    resize: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.msg-btn{
+    --padding-start: 0.5em;
+    --padding-end: 0.5em;
+}

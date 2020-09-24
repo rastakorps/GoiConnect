@@ -1,0 +1,36 @@
+<ion-header>
+  <div class="toolbar">
+  <ion-toolbar>
+    <div class="navsala">
+      <ion-button shape="round" class="openroom">
+        <ion-icon name="videocam-sharp"> </ion-icon>
+        <p>&nbsp; Abrir sala</p>
+      </ion-button>
+    </div>
+  </ion-toolbar>
+  </div>
+</ion-header>
+<br>
+<ion-content>
+  <ion-slides>
+    <ion-slide *ngFor="let i of [1,1,1,1,1,1]">
+      <ion-avatar slot="start" *ngFor="let i of [1,1,1,1,1]">
+        <img src="https://www.aconsciousrethink.com/wp-content/uploads/2019/05/reserved-person-line.jpg" style="width: 100%; height:100%">
+      </ion-avatar>
+    </ion-slide>
+  </ion-slides>
+<br>
+  <ion-list>
+    <ion-item *ngFor="let i of [1,1,1,1,1,1,1,1,1,1,1]">
+      <ion-avatar slot="start">
+        <img src="https://www.aconsciousrethink.com/wp-content/uploads/2019/05/reserved-person-line.jpg" style="width: 100%; height:100%">
+      </ion-avatar>
+      <ion-label>
+        Contacto n
+      </ion-label>
+      <ion-label text-right>
+        10:12
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

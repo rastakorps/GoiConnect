@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button color="secondary" class="btn-vender" style="float: right; border-radius:35px">
+      <ion-text color="dark">
+        <p>vender producto</p>
+      </ion-text>
+    </ion-button>
+    <ion-fab-button (click)="openCart()" #cart class="animate__animated animate_bounceOutLeft" horizontal="end">
+      <div class="cart-length">{{ cartItemCount | async}} </div>
+      <ion-icon name="heart" class="icon-heart"></ion-icon>
+    </ion-fab-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let p of products" color="secondary">
+      <ion-card-header>
+            <ion-button shape="round" class="star" color="secondary">
+              <ion-text color="dark">4.8</ion-text>
+              <ion-icon name="star" class="start-icon" slot="end" color="warning"></ion-icon>
+            </ion-button>
+        <img src="https://i5.walmartimages.com/asr/3a337afe-2cb2-4e95-a1a5-03f2a1793aef_1.fb910e07b380c2e44322556ab920118e.png">
+        <ion-card-title>
+          <ion-text color="dark"> <p>{{ p.name }} <br> {{ p.ciudad }}</p></ion-text>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="8">
+            <ion-text color="primary">
+              <h1 style="font-weight: bold;"> $ {{ p.price }} </h1>
+            </ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-fab vertical="top" horizontal="end" slot="fixed">
+          <ion-fab-button class="pru" size="small" (click)="addToCart(p)">
+            <ion-icon name="heart" class="heart-icon"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+        <br>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
